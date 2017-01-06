@@ -92,11 +92,31 @@ function insertAt(arr, index, value) {
 
 // Array: Remove At
 // Given array and an idex into array, remove and return the array value at that index. OD this without using built-in array mthods except pop(). think of popFront(arr) as quivelent to removeAt (arr,0).
-//write code here
+function removeAt(arr, index) {
+  var rem = arr[index];
+  for (var i = arr.length - 1; i > index; i--) {
+    temp = arr[i - 1];
+    arr[i - 1] = arr[i];
+    arr[i] = temp;
+  }
+  arr.pop();
+  return rem;
+}
 
 // Array Swap Pairs
 // Swap postions of successive pairs of values of given array. if length is odd, do not change the final element. For [1,2,3,4] return [2,1,4,3]. For example, cahnge input ["brendan",true, 42] to  [true, "brendan",42]. As with all array challenges, do this without any built-in array methods.
-// write code here.
+function swapPairs(arr) {
+  var temp;
+  for (var i = 0; arr.length > 1; i += 2) {
+    temp = arr[i];
+    arr[i] = arr[i + 1];
+    arr[i + 1] = temp;
+    if (arr[i + 2] === undefined) {
+      return arr;
+    }
+  }
+  return arr;
+}
 
 // Array Second Largest
 //Return the second-largest element of an array. Given [42,1,4,Math.pi, 71] return 7 if the array is too short, return null. (no sorting)
@@ -146,9 +166,9 @@ function nthLargest(arr, x) {
     }
     var kmax = arr[0]; // this shoule be at the head of the function
     count = 0; ///reassignment or declaration? ?????
-    for (var i = 0; i < arr.length; i++) { // ERROR i already defined! ---> NOT VALID
-      if (arr[i] > kmax) {
-        kmax = arr[i];
+    for (var y = 0; y < arr.length; y++) { // ERROR x already defined! ---> NOT VALID
+      if (arr[y] > kmax) {
+        kmax = arr[y];
         count ++;
         if (count > k - 1) {
           break;
@@ -175,4 +195,24 @@ function nthLg(arr, x) {
 }
 
 // zip it
-//?
+function zipIt(arr1, arr2) {
+  var newArr =[];
+  var maxLen;
+  if (arr.length >= arr2.length){
+    maxLen = arr1.lenth;
+  }else{
+    maxLen = arr2.length;
+  }
+  }
+  for (var i = 0; i < maxLen; i++) {
+    if(arr1.length < i){
+      newArr[i] = arr2[i];
+    } elseif (arr2.length < i) {
+      newArr[i] = arr1[i];
+    }
+    newarr[i] = arr[i];
+    newarr[i+1] = arr[i];
+  }
+}
+
+//?-
