@@ -1,9 +1,3 @@
-// in class javascript Algorithims examples
-// please note this code is formatted for Google JSCS
-// so it might look different...
-// if you submit a merge request, use Google JSCS please...
-// my linter will thank you.
-//
 // Fit the First Value
 // Your function should accept an array. If value at [0] is greater than array's length, print "Too big!"; if valueat [0] is less than array's length, print "too small!"; otherwise print "Just right!".
 function FitTheFirstValue(arr) {
@@ -214,5 +208,3 @@ function zipIt(arr1, arr2) {
     newarr[i+1] = arr[i];
   }
 }
-
-//?-
